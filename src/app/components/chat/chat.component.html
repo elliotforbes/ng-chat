@@ -1,0 +1,37 @@
+<div class="chat-main">
+  <div #chatmessages class="chatmessages" [scrollTop]="chatmessages.scrollHeight">
+    
+    <div class="no-messages" *ngIf="messages.length == 0">
+      <h5>Get the Conversation Started...</h5>
+    </div>
+    
+    <ul>
+      <li *ngFor="let message of messages">
+        <span *ngIf="message.isMe == false" class="you">
+          <img src="https://avatars1.githubusercontent.com/u/3332224?v=3&s=460" class="circle" alt="you">
+          <span class="speech">
+            {{ message.message }}
+          </span>
+        </span>
+
+        <span *ngIf="message.isMe == true" class="me">
+          <img src="https://avatars1.githubusercontent.com/u/3332224?v=3&s=460" class="circle" alt="you">
+          <span class="speech">
+            {{ message.message }}
+          </span>
+        </span>
+
+        <div class="clear"></div>
+      </li>
+    </ul>
+
+    <div class="clear"></div>
+  </div>
+
+  <div class="chat-input">
+    <form (keydown)="sendMsg($event, message)" name="messageForm" autocomplete="off">
+      <input name="message" type="text" [(ngModel)]="message.message" placeholder="Message...">
+    </form>
+  </div>
+
+</div>
