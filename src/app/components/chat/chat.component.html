@@ -7,19 +7,21 @@
     
     <ul>
       <li *ngFor="let message of messages">
-        <span *ngIf="message.isMe == false" class="you">
+        <div *ngIf="message.isMe == false" class="you">
           <img src="https://avatars1.githubusercontent.com/u/3332224?v=3&s=460" class="circle" alt="you">
-          <span class="speech">
+          <div class="speech">
             {{ message.message }}
-          </span>
-        </span>
+            <div class="time">{{ message.date | date:'shortTime' }}</div>
+          </div>
+        </div>
 
-        <span *ngIf="message.isMe == true" class="me">
+        <div *ngIf="message.isMe == true" class="me">
           <img src="https://avatars1.githubusercontent.com/u/3332224?v=3&s=460" class="circle" alt="you">
-          <span class="speech">
+          <div class="speech">
             {{ message.message }}
-          </span>
-        </span>
+            <div class="time">{{ message.date | date:'shortTime' }}</div>
+          </div>
+        </div>
 
         <div class="clear"></div>
       </li>
@@ -29,9 +31,20 @@
   </div>
 
   <div class="chat-input">
-    <form (keydown)="sendMsg($event, message)" name="messageForm" autocomplete="off">
-      <input name="message" type="text" [(ngModel)]="message.message" placeholder="Message...">
-    </form>
+    <div class="row">
+      <div class="col s2">
+        <button class="btn-floating"><i class="ion ion-link"></i></button>
+        <button class="btn-floating"><i class="ion ion-android-happy"></i></button>
+      </div>
+      <div class="col s9">
+        <form (keydown)="enterMsg($event)" name="messageForm" autocomplete="off">
+          <input name="message" type="text" [(ngModel)]="message.message" placeholder="Message...">
+        </form>
+      </div>
+      <div class="col s1">
+        <button (click)="sendMsg()" class="btn-floating"><i class="ion ion-paper-airplane"></i></button>
+      </div>
+    </div>
   </div>
 
 </div>

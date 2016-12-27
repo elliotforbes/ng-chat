@@ -1,21 +1,52 @@
 .chat-main {
   background-color: white;
   border: 1px solid #EEF1F4;
-  padding: 20px;
   margin-top: 20px;
-
   .chatmessages {
-    max-height: 600px;
+    height: 600px;
     overflow: scroll;
-
+    padding: 20px;
     h5 {
       font-weight: 300;
     }
-
   }
+  .chat-input{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #EEF1F4;
+    border-top: 1px solid #E3E8ED;
 
-  input {
-    margin-top: 20px;
+    button {
+      background-color: #5D6E82 !important;
+      margin-right: 20px;
+      margin-top: 20px;
+    }
+
+    input {
+      font-size: 18px;
+      border: none;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin: 0;
+    }
+    
+    ::-webkit-input-placeholder {
+      color: #C1C7CF;
+    }
+
+    :-moz-placeholder { /* Firefox 18- */
+      color: #C1C7CF;  
+    }
+
+    ::-moz-placeholder {  /* Firefox 19+ */
+      color: #C1C7CF;  
+    }
+
+    :-ms-input-placeholder {  
+      color: #C1C7CF;  
+    }
   }
 }
 
@@ -24,6 +55,15 @@ ul {
     background-color: #E6F3F9;
     border-radius: 5px;
     padding: 10px 20px 10px 20px;
+    max-width: 95%;
+    height: auto;
+
+    .time {
+      font-size: 12px;
+      color: #B6BDC5;
+      margin-top: 10px;
+    }
+
   }
   
   li {
@@ -37,6 +77,9 @@ ul {
   }
 
   .you {
+    .speech {
+      float: left;
+    }
     img {
       float: left;
       margin-right: 20px;
