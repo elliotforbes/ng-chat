@@ -9,7 +9,7 @@
       <li *ngFor="let message of messages">
         <div *ngIf="message.isMe == false" class="you">
           <img src="https://avatars1.githubusercontent.com/u/3332224?v=3&s=460" class="circle" alt="you">
-          <div class="speech">
+          <div Markdown class="speech">
             {{ message.message }}
             <div class="time">{{ message.date | date:'shortTime' }}</div>
           </div>
@@ -17,7 +17,7 @@
 
         <div *ngIf="message.isMe == true" class="me">
           <img src="https://avatars1.githubusercontent.com/u/3332224?v=3&s=460" class="circle" alt="you">
-          <div class="speech">
+          <div Markdown class="speech">
             {{ message.message }}
             <div class="time">{{ message.date | date:'shortTime' }}</div>
           </div>
@@ -32,11 +32,7 @@
 
   <div class="chat-input">
     <div class="row">
-      <div class="col s2">
-        <button class="btn-floating"><i class="ion ion-link"></i></button>
-        <button class="btn-floating"><i class="ion ion-android-happy"></i></button>
-      </div>
-      <div class="col s9">
+      <div class="col s11">
         <form (keydown)="enterMsg($event)" name="messageForm" autocomplete="off">
           <input name="message" type="text" [(ngModel)]="message.message" placeholder="Message...">
         </form>
