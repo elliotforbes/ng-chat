@@ -1,6 +1,12 @@
 # AngularChat
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.22-1.
+This project is a demonstration as to how one can connect to websockets using a service in angular.
+
+This falls under the MIT license, so feel free to use this whatever way you wish. 
+
+## Screenshot
+
+![App in use](screenshot.png?raw=true)
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
