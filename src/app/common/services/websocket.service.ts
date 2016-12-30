@@ -25,7 +25,7 @@ export class WebsocketService {
         ws.onclose = obs.complete.bind(obs);
         return ws.close.bind(ws);
     })
-let observer = {
+    let observer = {
         next: (data: Object) => {
             if (ws.readyState === WebSocket.OPEN) {
                 ws.send(JSON.stringify(data));
