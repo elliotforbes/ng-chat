@@ -4,7 +4,8 @@
   margin-top: 20px;
   .chatmessages {
     height: 600px;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     padding: 20px;
     h5 {
       font-weight: 300;
